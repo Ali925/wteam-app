@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/main.css",
+    "main.js": "/main.js",
+    "main.js.map": "/main.js.map",
+    "index.html": "/index.html",
+    "main.css.map": "/main.css.map",
+    "main.js.LICENSE.txt": "/main.js.LICENSE.txt",
+    "precache-manifest.65e2b6b7353995e792faafb71508250f.js": "/precache-manifest.65e2b6b7353995e792faafb71508250f.js",
+    "service-worker.js": "/service-worker.js",
+    "static/media/global.css": "/static/media/SanFrancisco.f568fc19.eot",
+    "static/media/callScreen.svg": "/static/media/callScreen.64e81871.svg",
+    "static/media/chromeEx.png": "/static/media/chromeEx.963cd103.png",
+    "static/media/icons.svg": "/static/media/icons.88218dc7.svg",
+    "static/media/person2.png": "/static/media/person2.c3484f55.png",
+    "static/media/wfh_9.svg": "/static/media/wfh_9.0ae19995.svg"
+  },
+  "entrypoints": [
+    "main.css",
+    "main.js"
+  ]
+}

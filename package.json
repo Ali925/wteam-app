@@ -1,0 +1,33 @@
+{
+  "name": "wteam-app",
+  "version": "1.0.0",
+  "author": "Tural Mehdi",
+  "description": "wteam app",
+  "main": "public/electron.js",
+  "homepage": "./",
+  "private": true,
+  "dependencies": {
+    "electron-is-dev": "^1.1.0",
+    "moment": "^2.22.2"
+  },
+  "scripts": {
+    "electron-dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-pack": "electron-builder -c.extraMetadata.main=public/electron.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "concurrently": "^4.1.1",
+    "cross-env": "^5.2.0",
+    "electron": "^5.0.8",
+    "electron-builder": "^21.1.5",
+    "wait-on": "^3.3.0"
+  }
+}
