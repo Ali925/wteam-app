@@ -1,0 +1,15 @@
+.leave-btn {
+	 -webkit-user-select: none;
+	-webkit-app-region: drag;
+}
+
+.decline-btn{
+	position: absolute!important;
+	top: 0;
+	z-index: 9999999999999999999999;
+	pointer-events: all;
+}
+
+.leave-btn > a{
+	-webkit-app-region: no-drag;
+}
