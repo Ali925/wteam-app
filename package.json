@@ -1,6 +1,6 @@
 {
   "name": "wteam-app",
-  "version": "0.0.1",
+  "version": "0.1-alpha",
   "author": "Tural Mehdi",
   "description": "wteam app",
   "main": "public/electron.js",
@@ -11,7 +11,8 @@
     "applescript": "^1.0.0",
     "electron-fetch": "^1.7.1",
     "electron-is-dev": "^1.1.0",
-    "moment": "^2.22.2"
+    "moment": "^2.22.2",
+    "update-electron-app": "^1.5.0"
   },
   "scripts": {
     "electron-dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
@@ -20,11 +21,11 @@
   "build": {
     "mac": {
       "icon": "./icons.icns",
-       "hardenedRuntime": true,
-       "entitlements": "entitlements.mac.plist",
-       "extendInfo": {
-            "NSMicrophoneUsageDescription": "Please give us access to your microphone"
-        }
+      "hardenedRuntime": true,
+      "entitlements": "entitlements.mac.plist",
+      "extendInfo": {
+        "NSMicrophoneUsageDescription": "Please give us access to your microphone"
+      }
     }
   },
   "eslintConfig": {

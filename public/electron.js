@@ -4,7 +4,9 @@ const path = require('path');
 const activeWin = require('active-win');
 const applescript = require('applescript');
 const fetch = require('electron-fetch').default;
-let url = require('url')
+let url = require('url');
+require('update-electron-app')();
+
 
 const appleScripts = {
   'itunes': `tell application "iTunes" to get {name, artist, album} of current track`,
