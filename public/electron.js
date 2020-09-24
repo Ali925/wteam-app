@@ -5,7 +5,11 @@ const activeWin = require('active-win');
 const applescript = require('applescript');
 const fetch = require('electron-fetch').default;
 let url = require('url');
-require('update-electron-app')();
+
+require('update-electron-app')({
+  repo: 'https://github.com/Ali925/wteam-app.git',
+  updateInterval: '1 hour'
+});
 
 
 const appleScripts = {
