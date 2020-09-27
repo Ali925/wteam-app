@@ -1,6 +1,6 @@
 {
   "name": "wteam-app",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Tural Mehdi",
   "description": "wteam app",
   "main": "public/electron.js",
@@ -19,6 +19,7 @@
     "electron-pack": "electron-builder -c.extraMetadata.main=public/electron.js"
   },
   "build": {
+    "appId": "com.wteam.chat",
     "mac": {
       "icon": "./icons.icns",
       "hardenedRuntime": true,
@@ -42,6 +43,7 @@
     "cross-env": "^5.2.0",
     "electron": "^5.0.8",
     "electron-builder": "^21.1.5",
+    "electron-notarize": "^1.0.0",
     "wait-on": "^3.3.0"
   }
 }

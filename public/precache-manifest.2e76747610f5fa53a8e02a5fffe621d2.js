@@ -4,11 +4,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/index.html"
   },
   {
-    "revision": "78aaf61648475bc19e15",
+    "revision": "f13ca67bfc499a208c9c",
     "url": "/main.css"
   },
   {
-    "revision": "78aaf61648475bc19e15",
+    "revision": "f13ca67bfc499a208c9c",
     "url": "/main.js"
   },
   {
@@ -136,12 +136,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/chromeEx.963cd103.png"
   },
   {
-    "revision": "83099384886e98ebb9c9ce1ea656512a",
-    "url": "/static/media/icons.83099384.svg"
+    "revision": "9a4c88484be6cb9916597b68932e35db",
+    "url": "/static/media/folder.9a4c8848.gif"
+  },
+  {
+    "revision": "8e2cb4a2e15e8082a7a114d2ccf65ca0",
+    "url": "/static/media/icons.8e2cb4a2.svg"
+  },
+  {
+    "revision": "08ca91bca72d4b90b3e8969473248267",
+    "url": "/static/media/meeting.08ca91bc.gif"
   },
   {
     "revision": "c3484f55e4d9a67af12477aaab7e0180",
     "url": "/static/media/person2.c3484f55.png"
+  },
+  {
+    "revision": "04b15fe83a45ef64e49675e0b4882e37",
+    "url": "/static/media/room.04b15fe8.gif"
   },
   {
     "revision": "0ae19995028dd4982aab3ef07911e748",

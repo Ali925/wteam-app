@@ -8,7 +8,7 @@ let url = require('url');
 
 require('update-electron-app')({
   repo: 'https://github.com/Ali925/wteam-app.git',
-  updateInterval: '1 hour'
+  updateInterval: '5 minutes'
 });
 
 
@@ -95,8 +95,11 @@ setInterval(() => {
     mainWindow.webContents
     .executeJavaScript('localStorage.getItem("userInfo");', true)
     .then(result => {
+      mainWindow.webContents
+      .executeJavaScript('localStorage.getItem("userPref");', true)
+      .then(pref => {
       //console.log(result);
-      if(result && result.length && result != 'null'){
+      if(result && result.length && result != 'null' && result.appStatus != 'Focus mode' && pref.shareActiveApp){
         let user = JSON.parse(result), notification;
         user.uType = user.type;
 
@@ -108,7 +111,7 @@ setInterval(() => {
             }
             let appName = rtn && rtn[0] ? rtn[0] : '', appTitle = rtn && rtn[1] ? rtn[1] : '', browser = appName && appName.toLowerCase().includes('chrome') ? 'chrome' : (appName && appName.toLowerCase().includes('safari') ? 'safari' : (appName && appName.toLowerCase().includes('firefox') ? 'firefox' : ''));
             console.log('get app name: ', appName, appTitle);
-            if(appName && appName.toLowerCase().includes('chrome') || appName.toLowerCase().includes('safari') || appName.toLowerCase().includes('firefox')){
+            if(pref.shareActiveAppUrl && appName && appName.toLowerCase().includes('chrome') || appName.toLowerCase().includes('safari') || appName.toLowerCase().includes('firefox')){
               applescript.execString(appleScripts[browser], (err, rtn) => {
                 if (err) {
                   // Something went wrong!
@@ -173,7 +176,7 @@ setInterval(() => {
 
         
       }
-      
+      });
     });
   }
   
