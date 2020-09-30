@@ -43,7 +43,7 @@ const appleScripts = {
 
 
 let mainWindow = null;
-app.on('ready', createWindow);
+app.on('ready', () => setTimeout(createWindow, 500));
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {
     app.quit()
@@ -51,7 +51,7 @@ app.on('window-all-closed', function () {
 });
 app.on('activate', function () {
   if (mainWindow === null) {
-    createWindow()
+    setTimeout(createWindow, 500);
   }
 });
 function createWindow() {

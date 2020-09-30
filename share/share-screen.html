@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		html, body{
+			padding: 0;
+		    margin: 0;
+		    display: block;
+		    width: 100%;
+		    height: 100%;
+		    border: 1.5px solid red;
+		    background: transparent;
+		    overflow: hidden;
+		    box-sizing: border-box;
+		}
+
+		.d-none{
+			display: none!important;
+		}
+
+		div.cursor > span{
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			background-image: url('cursor.svg');
+		}
+
+		div.cursor > small{
+			padding: 5px 10px;
+			background: #2fc2fe;
+			color: #7c7c7c;
+			posisiton: relative;
+			right: -15px;
+			bottom: -15px;
+			border-radiud: 6px;
+		}
+	</style>
+</head>
+<body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha512-v8ng/uGxkge3d1IJuEo6dJP8JViyvms0cly9pnbfRxT6/31c3dRWxIiwGnMSWwZjHKOuY3EVmijs7k1jz/9bLA==" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="./share.js"></script>
+</body>
+</html>
