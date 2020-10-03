@@ -1,4 +1,4 @@
-let self = this;
+let self = this, users = {};
 let displayName = getParameterByName('displayName', window.location.href);
 let thisRoomId = getParameterByName('roomId', window.location.href);
 		socket = io('https://api.wteam.chat', {
@@ -10,13 +10,14 @@ let thisRoomId = getParameterByName('roomId', window.location.href);
 		  // either with send()
 		  console.log("connected to socker server");
 		  socket.emit("new_user", displayName);
+		  setTimeout(() => {
+		  	socket.emit("get_users", displayName);
+		  }, 1000);
 		});
-
-		socket.emit("get_users");
 
 		socket.on("all_users", (data) => {
 			let allUsers = JSON.parse(data);
-
+			console.log('all users: ', allUsers);
 			for(let i in users){
 				if(!allUsers[i]){
 					var elem = document.getElementById("cursor_"+i);
@@ -28,7 +29,7 @@ let thisRoomId = getParameterByName('roomId', window.location.href);
 		});
 
 		socket.on('cursor_position_changed', (data) => {
-			console.log('cursor position changed!!!: ', JSON.parse(data));
+			//console.log('cursor position changed!!!: ', JSON.parse(data));
 			let ud = JSON.parse(data);
 			let roomId = ud.roomId;
 			let name = ud.name;
@@ -37,8 +38,10 @@ let thisRoomId = getParameterByName('roomId', window.location.href);
 			let y = ud.y;
 			y = Math.round((window.innerHeight * y) / 100);
 			let id = ud.id;
-			if(roomId == thisRoomId){
+			if(roomId && thisRoomId && id && roomId == thisRoomId){
 				if(!document.getElementById("cursor_"+id)){
+					console.log('new cursor detected: ', id, roomId, name);
+						users[id] = {name: name, id: id};
 						let el = document.createElement("DIV");
 						el.className = "cursor";
 						el.id = "cursor_" + id;
@@ -60,11 +63,11 @@ let thisRoomId = getParameterByName('roomId', window.location.href);
 		});
 
 		function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
+		    if (!url) url = window.location.href;
+		    name = name.replace(/[\[\]]/g, '\\$&');
+		    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+		        results = regex.exec(url);
+		    if (!results) return null;
+		    if (!results[2]) return '';
+		    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+		}

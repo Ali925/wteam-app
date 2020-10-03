@@ -1,6 +1,6 @@
 {
   "name": "wteam-app",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": "Tural Mehdi",
   "description": "wteam app",
   "main": "public/electron.js",
@@ -13,6 +13,7 @@
     "electron-is-dev": "^1.1.0",
     "electron-log": "^4.2.4",
     "moment": "^2.22.2",
+    "node-window-manager": "^2.2.4",
     "update-electron-app": "^1.5.0"
   },
   "repository": "Ali925/wteam-app",
