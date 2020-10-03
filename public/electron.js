@@ -7,8 +7,9 @@ const fetch = require('electron-fetch').default;
 let url = require('url');
 
 require('update-electron-app')({
-  repo: 'https://github.com/Ali925/wteam-app.git',
-  updateInterval: '5 minutes'
+  repo: 'Ali925/wteam-app',
+  updateInterval: '5 minutes',
+  logger: require('electron-log')
 });
 
 

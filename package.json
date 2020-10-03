@@ -1,6 +1,6 @@
 {
   "name": "wteam-app",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Tural Mehdi",
   "description": "wteam app",
   "main": "public/electron.js",
@@ -11,9 +11,11 @@
     "applescript": "^1.0.0",
     "electron-fetch": "^1.7.1",
     "electron-is-dev": "^1.1.0",
+    "electron-log": "^4.2.4",
     "moment": "^2.22.2",
     "update-electron-app": "^1.5.0"
   },
+  "repository": "Ali925/wteam-app",
   "scripts": {
     "start": "electron --enable-transparent-visuals .",
     "electron-dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
