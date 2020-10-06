@@ -42,6 +42,107 @@ const appleScripts = {
         return {frontAppName, windowTitle}`
 };
 
+const appIconsMap = {
+  'adobe animate': 'adobe-animate',
+  'adobe illustrator': 'adobe-illustrator-cc',
+  'adobe xd': 'adobe-xd-1',
+  'airtable': 'airtable',
+  'asana': 'asana-logo',
+  'atom': 'atom-4',
+  'aws': 'aws-2',
+  'basecamp': 'basecamp',
+  'bitbucket': 'bitbucket',
+  'blender': 'blender-2',
+  'buffer': 'buffer',
+  'digitalocean': 'digitalocean-icon-1',
+  'dropbox' : 'dropbox-1',
+  'dropbox paper': 'dropbox-paper',
+  'edge animate': 'edge-animate-app-cc',
+  'electron': 'electron',
+  'figma' : 'figma-1',
+  'front': 'front',
+  'github': 'github-1',
+  'gitlab': 'gitlab',
+  'google slide': 'google slide',
+  'google calendar': 'google-calendar',
+  'google docs': 'google-docs-icon',
+  'google meet': 'google-meet-2',
+  'google sheets': 'google-sheets',
+  'hubspot': 'hubspot-1',
+  'ibooks': 'ibooks',
+  'indesign': 'indesign-cc',
+  'intercom': 'intercom',
+  'invision': 'invision',
+  'jira': 'jira',
+  'linkedin': 'linkedin-icon-2',
+  'microsoft excel': 'microsoft-excel-2013',
+  'microsoft powerpoint': 'microsoft-powerpoint-2013',
+  'microsoft word': 'microsoft-word-2013-logo',
+  'notion': 'notion-2',
+  'numbers': 'numbers',
+  'onedrive': 'onedrive-1',
+  'pages ios': 'pages-ios',
+  'photoshop': 'photoshop-cc',
+  'premiere': 'premiere-cc',
+  'salesforce': 'salesforce-2',
+  'sketch': 'sketch-2',
+  'skype': 'skype-1',
+  'slack': 'slack',
+  'stack overflow': 'stack-overflow',
+  'teamwork': 'teamwork-2',
+  'telegram': 'telegram-1',
+  'terminal': 'terminal',
+  'trello': 'trello',
+  'unity': 'unity-69',
+  'visual studio 2013': 'visual-studio-2013',
+  'visual studio code': 'visual-studio-code',
+  'zendesk': 'zendesk-1',
+  'zeplin': 'zeplin',
+  'zoom': 'zoom-communications-logo'
+};
+
+const appUrlIconsMap = {
+  'airtable.com': 'airtable',
+  'asana.com': 'asana-logo',
+  'aws.amazon.com': 'aws-2',
+  'basecamp.com': 'basecamp',
+  'bitbucket.com': 'bitbucket',
+  'digitalocean.com': 'digitalocean-icon-1',
+  'dropbox.com' : 'dropbox-1',
+  'paper.dropbox.com': 'dropbox-paper',
+  'figma.com' : 'figma-1',
+  'github.com': 'github-1',
+  'gitlab.com': 'gitlab',
+  'docs.google.com/presentation': 'google slide',
+  'calendar.google.com': 'google-calendar',
+  'docs.google.com/document': 'google-docs-icon',
+  'meet.google.com': 'google-meet-2',
+  'docs.google.com/spreadsheets': 'google-sheets',
+  'hubspot.com': 'hubspot-1',
+  'intercom.com': 'intercom',
+  'invisionapp.com': 'invision',
+  'jira.atlassian.com': 'jira',
+  'linkedin.com': 'linkedin-icon-2',
+  'office.com/launch/excel': 'microsoft-excel-2013',
+  'onedrive.live.com,xlsx,xls,xml,csv': 'microsoft-excel-2013',
+  'office.com/launch/powerpoint': 'microsoft-powerpoint-2013',
+  'onedrive.live.com,pptx,pptm,ppt': 'microsoft-powerpoint-2013',
+  'office.com/launch/word': 'microsoft-word-2013-logo',
+  'onedrive.live.com,doc,docx': 'microsoft-word-2013-logo',
+  'notion.so': 'notion-2',
+  'onedrive.live.com': 'onedrive-1',
+  'salesforce.com': 'salesforce-2',
+  'web.skype.com': 'skype-1',
+  'app.slack.com': 'slack',
+  'stackoverflow.com': 'stack-overflow',
+  'teamwork.com': 'teamwork-2',
+  'web.telegram.org': 'telegram-1',
+  'trello.com': 'trello',
+  'zendesk.com': 'zendesk-1',
+  'app.zeplin.io': 'zeplin',
+  'web.zoom.us': 'zoom-communications-logo'
+};
+
 
 let mainWindow = null;
 app.on('ready', () => setTimeout(createWindow, 500));
@@ -96,12 +197,14 @@ setInterval(() => {
     mainWindow.webContents
     .executeJavaScript('localStorage.getItem("userInfo");', true)
     .then(result => {
+      let user = result && result.length && result != 'null' && result != 'undefined' ? JSON.parse(result) : undefined;
       mainWindow.webContents
       .executeJavaScript('localStorage.getItem("userPref");', true)
-      .then(pref => {
-      //console.log(result);
-      if(result && result.length && result != 'null' && result.appStatus != 'Focus mode' && pref.shareActiveApp){
-        let user = JSON.parse(result), notification;
+      .then(prefs => {
+      let pref = prefs && prefs.length && prefs != 'null' && prefs != 'undefined' ? JSON.parse(prefs) : undefined;
+      console.log("preferences: ", user.id, pref.shareActiveApp);
+      if(user && user.id && user.appStatus != 'Focus mode' && (!pref || pref.shareActiveApp)){
+        let notification;
         user.uType = user.type;
 
         if(process.platform == 'darwin'){
@@ -112,14 +215,45 @@ setInterval(() => {
             }
             let appName = rtn && rtn[0] ? rtn[0] : '', appTitle = rtn && rtn[1] ? rtn[1] : '', browser = appName && appName.toLowerCase().includes('chrome') ? 'chrome' : (appName && appName.toLowerCase().includes('safari') ? 'safari' : (appName && appName.toLowerCase().includes('firefox') ? 'firefox' : ''));
             console.log('get app name: ', appName, appTitle);
-            if(pref.shareActiveAppUrl && appName && appName.toLowerCase().includes('chrome') || appName.toLowerCase().includes('safari') || appName.toLowerCase().includes('firefox')){
+            if(appName && appName.toLowerCase().includes('chrome') || appName.toLowerCase().includes('safari') || appName.toLowerCase().includes('firefox')){
               applescript.execString(appleScripts[browser], (err, rtn) => {
                 if (err) {
                   // Something went wrong!
                   return ;
                 }
                 let appInfo = JSON.stringify({appName: appName, appTitle: appTitle, url: rtn});
-                notification = {code: 'user.app-window-data', isNotification: false, actingUser: user, activeWindow: {appName: appName, appTitle: appTitle, url: rtn}};
+                let appIcon = '';
+
+                for(let i in appUrlIconsMap){
+                  let titles = i.split(",");
+                  if(titles.length > 1){
+                    if(titles.every(t => rtn.includes(t))){
+                      appIcon = appUrlIconsMap[i];
+                      break;
+                    }
+                  } else {
+                    if(rtn.includes(i)){
+                      appIcon = appUrlIconsMap[i];
+                      break;
+                    }
+                  }
+                }
+
+                if(!appIcon){
+                  for(let i in appIconsMap){
+                    if(appName.trim().toLowerCase().includes(i)){
+                      appIcon = appIconsMap[i];
+                      break;
+                    }
+                  }
+                }
+
+                if((!pref || pref.shareActiveAppUrl)){
+                  notification = {code: 'user.app-window-data', isNotification: false, actingUser: user, activeWindow: {appName: appName, appTitle: appTitle, url: rtn, appIcon: appIcon}};
+                } else {
+                  notification = {code: 'user.app-window-data', isNotification: false, actingUser: user, activeWindow: {appName: appName, appTitle: appTitle, appIcon: appIcon}};
+                }
+                
                 console.log('get app url: ', rtn);
                 if(currentAppInfo != appInfo){
                   currentAppInfo = appInfo;
@@ -132,10 +266,20 @@ setInterval(() => {
                 
               });
             } else {
-              let appInfo = '';
+              let appInfo = '', appIcon = '';
               if(appName){
                 appInfo = JSON.stringify({appName: appName, appTitle: appTitle});
-                notification = {code: 'user.app-window-data', isNotification: false, actingUser: user, activeWindow: {appName: appName, appTitle: appTitle}};
+
+                if(!appIcon){
+                  for(let i in appIconsMap){
+                    if(appName.trim().toLowerCase().includes(i)){
+                      appIcon = appIconsMap[i];
+                      break;
+                    }
+                  }
+                }
+
+                notification = {code: 'user.app-window-data', isNotification: false, actingUser: user, activeWindow: {appName: appName, appTitle: appTitle, appIcon: appIcon}};
               } else {
                 appInfo = '';
                 notification = {code: 'user.app-window-data', isNotification: false, actingUser: user};
@@ -155,10 +299,18 @@ setInterval(() => {
         } else {
           activeWin().then(res => {
             //console.log('active win: ', res);
-            let appName = res.owner && res.owner.name ? res.owner.name : undefined, appTitle = res.title ? res.title : '', appInfo = '';
+            let appName = res.owner && res.owner.name ? res.owner.name : undefined, appTitle = res.title ? res.title : '', appInfo = '', appIcon = '';
             if(appName){
               appInfo = JSON.stringify({appName: appName, appTitle: appTitle});
-              notification = {code: 'user.app-window-data', isNotification: false, actingUser: user, activeWindow: {appName: appName, appTitle: appTitle}};
+              if(!appIcon){
+                  for(let i in appIconsMap){
+                    if(appName.trim().toLowerCase().includes(i)){
+                      appIcon = appIconsMap[i];
+                      break;
+                    }
+                  }
+                }
+              notification = {code: 'user.app-window-data', isNotification: false, actingUser: user, activeWindow: {appName: appName, appTitle: appTitle, appIcon: appIcon}};
             } else {
               appInfo = '';
               notification = {code: 'user.app-window-data', isNotification: false, actingUser: user};
