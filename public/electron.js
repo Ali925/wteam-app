@@ -63,7 +63,7 @@ const appIconsMap = {
   'front': 'front',
   'github': 'github-1',
   'gitlab': 'gitlab',
-  'google slide': 'google slide',
+  'google slide': 'google-slide',
   'google calendar': 'google-calendar',
   'google docs': 'google-docs-icon',
   'google meet': 'google-meet-2',
@@ -88,7 +88,7 @@ const appIconsMap = {
   'sketch': 'sketch-2',
   'skype': 'skype-1',
   'slack': 'slack',
-  'stack overflow': 'stack-overflow',
+  'stack overflow': 'stackoverflow',
   'teamwork': 'teamwork-2',
   'telegram': 'telegram-1',
   'terminal': 'terminal',
@@ -113,7 +113,7 @@ const appUrlIconsMap = {
   'figma.com' : 'figma-1',
   'github.com': 'github-1',
   'gitlab.com': 'gitlab',
-  'docs.google.com/presentation': 'google slide',
+  'docs.google.com/presentation': 'google-slide',
   'calendar.google.com': 'google-calendar',
   'docs.google.com/document': 'google-docs-icon',
   'meet.google.com': 'google-meet-2',
@@ -134,7 +134,7 @@ const appUrlIconsMap = {
   'salesforce.com': 'salesforce-2',
   'web.skype.com': 'skype-1',
   'app.slack.com': 'slack',
-  'stackoverflow.com': 'stack-overflow',
+  'stackoverflow.com': 'stackoverflow',
   'teamwork.com': 'teamwork-2',
   'web.telegram.org': 'telegram-1',
   'trello.com': 'trello',
@@ -297,8 +297,9 @@ setInterval(() => {
             
           });
         } else {
-          activeWin().then(res => {
-            //console.log('active win: ', res);
+          console.log("it is not darwin!!");
+          (async () => {
+            let res = await activeWin();
             let appName = res.owner && res.owner.name ? res.owner.name : undefined, appTitle = res.title ? res.title : '', appInfo = '', appIcon = '';
             if(appName){
               appInfo = JSON.stringify({appName: appName, appTitle: appTitle});
@@ -315,7 +316,7 @@ setInterval(() => {
               appInfo = '';
               notification = {code: 'user.app-window-data', isNotification: false, actingUser: user};
             }
-
+            console.log("active window: ", appInfo);
             if(currentAppInfo != appInfo){
                 currentAppInfo = appInfo;
                 fetch('https://api.wteam.chat/messaging-service/notification', {
@@ -324,7 +325,7 @@ setInterval(() => {
                   body: JSON.stringify(notification)
                 });
             }
-          }).catch(err => console.log('err ', err));
+          })();
         }
 
         
