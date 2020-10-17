@@ -202,7 +202,6 @@ setInterval(() => {
       .executeJavaScript('localStorage.getItem("userPref");', true)
       .then(prefs => {
       let pref = prefs && prefs.length && prefs != 'null' && prefs != 'undefined' ? JSON.parse(prefs) : undefined;
-      console.log("preferences: ", user.id, pref.shareActiveApp);
       if(user && user.id && user.appStatus != 'Focus mode' && (!pref || pref.shareActiveApp)){
         let notification;
         user.uType = user.type;

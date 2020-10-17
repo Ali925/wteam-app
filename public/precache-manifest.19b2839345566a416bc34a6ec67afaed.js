@@ -4,11 +4,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/index.html"
   },
   {
-    "revision": "7557ba5009c0fe77b851",
+    "revision": "79c17ca8ec099c5f5af6",
     "url": "/main.css"
   },
   {
-    "revision": "7557ba5009c0fe77b851",
+    "revision": "79c17ca8ec099c5f5af6",
     "url": "/main.js"
   },
   {
@@ -140,8 +140,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/folder.9a4c8848.gif"
   },
   {
-    "revision": "1649b4215a6387dda1c8bcf68c4cb521",
-    "url": "/static/media/icons.1649b421.svg"
+    "revision": "2d29f0e75706ff5177816ce169c224ce",
+    "url": "/static/media/icons.2d29f0e7.svg"
   },
   {
     "revision": "08ca91bca72d4b90b3e8969473248267",
@@ -156,7 +156,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/room.04b15fe8.gif"
   },
   {
-    "revision": "bbbaabe5a56966ed29dc02cb854c1502",
-    "url": "/static/media/wfh_9.bbbaabe5.svg"
+    "revision": "0ae19995028dd4982aab3ef07911e748",
+    "url": "/static/media/wfh_9.0ae19995.svg"
   }
 ]);
