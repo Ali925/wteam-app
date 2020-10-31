@@ -12,6 +12,7 @@
     "electron-fetch": "^1.7.1",
     "electron-is-dev": "^1.1.0",
     "electron-log": "^4.2.4",
+    "electron-updater": "^4.3.5",
     "moment": "^2.22.2",
     "node-window-manager": "^2.2.4",
     "update-electron-app": "^1.5.0"
@@ -21,7 +22,7 @@
     "start": "electron --enable-transparent-visuals .",
     "rebuild": "electron-rebuild -f -w node-gyp",
     "electron-dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
-    "electron-pack": "electron-builder -c.extraMetadata.main=public/electron.js"
+    "electron-pack": "set WIN_CSC_LINK=cert.pfx && set WIN_CSC_KEY_PASSWORD=q1146666 && electron-builder -c.extraMetadata.main=public/electron.js"
   },
   "build": {
     "appId": "com.wteam.chat",
@@ -36,7 +37,8 @@
     },
     "win": {
       "target": "nsis",
-      "icon": "./icon.ico"
+      "icon": "./icon.ico",
+      "publish": ["github"]
     },
     "linux": {
       "target": [

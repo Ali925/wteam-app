@@ -6,11 +6,24 @@ const applescript = require('applescript');
 const fetch = require('electron-fetch').default;
 let url = require('url');
 
-require('update-electron-app')({
-  repo: 'Ali925/wteam-app',
-  updateInterval: '5 minutes',
-  logger: require('electron-log')
-});
+if (process.platform !== 'darwin') {
+    const { autoUpdater } = require("electron-updater");
+
+    const log = require("electron-log")
+    log.transports.file.level = "debug"
+    autoUpdater.logger = log
+    autoUpdater.checkForUpdatesAndNotify();
+} else {
+  require('update-electron-app')({
+    repo: 'Ali925/wteam-app',
+    updateInterval: '5 minutes',
+    logger: require('electron-log')
+  });
+}
+
+
+
+
 
 
 const appleScripts = {
