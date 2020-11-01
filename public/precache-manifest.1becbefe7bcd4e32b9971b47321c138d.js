@@ -1,14 +1,14 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6067f1e1e578e0248d44f498cc316989",
+    "revision": "b962a0490bafca818169c35353dd61a2",
     "url": "/index.html"
   },
   {
-    "revision": "79c17ca8ec099c5f5af6",
+    "revision": "adf3843e4707b5eae437",
     "url": "/main.css"
   },
   {
-    "revision": "79c17ca8ec099c5f5af6",
+    "revision": "adf3843e4707b5eae437",
     "url": "/main.js"
   },
   {
@@ -128,10 +128,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/appicons.dfd74183.svg"
   },
   {
-    "revision": "64e818714f061f7f8a74e87b3ccfd717",
-    "url": "/static/media/callScreen.64e81871.svg"
-  },
-  {
     "revision": "963cd1035b580332ec464c794daf51a4",
     "url": "/static/media/chromeEx.963cd103.png"
   },
@@ -140,8 +136,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/folder.9a4c8848.gif"
   },
   {
-    "revision": "2d29f0e75706ff5177816ce169c224ce",
-    "url": "/static/media/icons.2d29f0e7.svg"
+    "revision": "1649b4215a6387dda1c8bcf68c4cb521",
+    "url": "/static/media/icons.1649b421.svg"
   },
   {
     "revision": "08ca91bca72d4b90b3e8969473248267",
@@ -156,7 +152,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/room.04b15fe8.gif"
   },
   {
-    "revision": "0ae19995028dd4982aab3ef07911e748",
-    "url": "/static/media/wfh_9.0ae19995.svg"
+    "revision": "7a07afc17a973f2c5b8339e9d35c0992",
+    "url": "/static/media/teammate card.7a07afc1.svg"
+  },
+  {
+    "revision": "bbbaabe5a56966ed29dc02cb854c1502",
+    "url": "/static/media/wfh_9.bbbaabe5.svg"
   }
 ]);
