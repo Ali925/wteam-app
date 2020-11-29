@@ -1,7 +1,7 @@
 {
-  "name": "wteam",
-  "version": "0.0.15",
-  "author": "Tural Mehdi",
+  "name": "wteam-test",
+  "version": "0.0.16",
+  "author": "Tural Mehdi <alitural.mehdi@gmail.com>",
   "description": "wteam app",
   "main": "public/electron.js",
   "homepage": "./",
@@ -17,7 +17,7 @@
     "node-window-manager": "^2.2.4",
     "update-electron-app": "^1.5.0"
   },
-  "repository": "Ali925/wteam-app",
+  "repository": "Ali925/wteam-app-test",
   "scripts": {
     "start": "electron --enable-transparent-visuals .",
     "rebuild": "electron-rebuild -f -w node-gyp",
@@ -38,12 +38,13 @@
     "win": {
       "target": "nsis",
       "icon": "./icon.ico",
-      "publish": ["github"]
+      "publish": [
+        "github"
+      ]
     },
     "linux": {
       "target": [
-        "AppImage",
-        "deb"
+        "AppImage"
       ]
     }
   },
@@ -59,7 +60,7 @@
   "devDependencies": {
     "concurrently": "^5.3.0",
     "cross-env": "^7.0.2",
-    "electron": "^10.1.3",
+    "electron": "^5.0.13",
     "electron-builder": "^22.8.1",
     "electron-notarize": "^1.0.0",
     "electron-rebuild": "^2.2.0",

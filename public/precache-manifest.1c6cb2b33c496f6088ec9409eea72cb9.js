@@ -4,15 +4,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/index.html"
   },
   {
-    "revision": "adf3843e4707b5eae437",
+    "revision": "69878f2343a27c4d8b57",
     "url": "/main.css"
   },
   {
-    "revision": "adf3843e4707b5eae437",
+    "revision": "69878f2343a27c4d8b57",
     "url": "/main.js"
   },
   {
-    "revision": "d2966845b94a3318bf32eecc7af8015d",
+    "revision": "689f5c7c5e15bcffc320aab5510cfd48",
     "url": "/main.js.LICENSE.txt"
   },
   {
@@ -136,8 +136,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/folder.9a4c8848.gif"
   },
   {
-    "revision": "1649b4215a6387dda1c8bcf68c4cb521",
-    "url": "/static/media/icons.1649b421.svg"
+    "revision": "ce304163138ce78a82e7009fc1b8760f",
+    "url": "/static/media/icons.ce304163.svg"
   },
   {
     "revision": "08ca91bca72d4b90b3e8969473248267",
@@ -152,11 +152,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/room.04b15fe8.gif"
   },
   {
-    "revision": "7a07afc17a973f2c5b8339e9d35c0992",
-    "url": "/static/media/teammate card.7a07afc1.svg"
+    "revision": "ef836b8e7126307e6aa61756fa85b7c2",
+    "url": "/static/media/teammate card.ef836b8e.svg"
   },
   {
-    "revision": "bbbaabe5a56966ed29dc02cb854c1502",
-    "url": "/static/media/wfh_9.bbbaabe5.svg"
+    "revision": "0ae19995028dd4982aab3ef07911e748",
+    "url": "/static/media/wfh_9.0ae19995.svg"
   }
 ]);

@@ -169,6 +169,8 @@ app.on('activate', function () {
     setTimeout(createWindow, 1000);
   }
 });
+
+
 function createWindow() {
   //console.log("app path: ", app.getAppPath());
   mainWindow = new BrowserWindow({
