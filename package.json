@@ -1,6 +1,6 @@
 {
-  "name": "wteam-test",
-  "version": "0.0.16",
+  "name": "wteam",
+  "version": "0.0.18",
   "author": "Tural Mehdi <alitural.mehdi@gmail.com>",
   "description": "wteam app",
   "main": "public/electron.js",

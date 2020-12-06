@@ -176,8 +176,8 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1024,
     height: 1024,
-    minWidth: 768,
-    minHeight: 485,
+    minWidth: 960,
+    minHeight: 720,
     title: "Wteam",
     webPreferences : { 
       nodeIntegration: true,
