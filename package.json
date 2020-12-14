@@ -1,6 +1,6 @@
 {
   "name": "wteam",
-  "version": "0.0.18",
+  "version": "0.0.21",
   "author": "Tural Mehdi <alitural.mehdi@gmail.com>",
   "description": "wteam app",
   "main": "public/electron.js",
@@ -17,7 +17,7 @@
     "node-window-manager": "^2.2.4",
     "update-electron-app": "^1.5.0"
   },
-  "repository": "Ali925/wteam-app-test",
+  "repository": "Ali925/wteam-app",
   "scripts": {
     "start": "electron --enable-transparent-visuals .",
     "rebuild": "electron-rebuild -f -w node-gyp",

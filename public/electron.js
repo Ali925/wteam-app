@@ -241,12 +241,12 @@ setInterval(() => {
                 for(let i in appUrlIconsMap){
                   let titles = i.split(",");
                   if(titles.length > 1){
-                    if(titles.every(t => rtn.includes(t))){
+                    if(titles.every(t => rtn && rtn.includes(t))){
                       appIcon = appUrlIconsMap[i];
                       break;
                     }
                   } else {
-                    if(rtn.includes(i)){
+                    if(rtn && rtn.includes(i)){
                       appIcon = appUrlIconsMap[i];
                       break;
                     }

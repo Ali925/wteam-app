@@ -33,6 +33,8 @@ let thisRoomId = getParameterByName('roomId', window.location.href);
 			let ud = JSON.parse(data);
 			let roomId = ud.roomId;
 			let name = ud.name;
+			// let videoWidth = ud.videoWidth;
+			// let videoHeight = ud.videoHeight;
 			let x = ud.x;
 			x = Math.round((window.innerWidth * x) / 100);
 			let y = ud.y;
@@ -45,8 +47,8 @@ let thisRoomId = getParameterByName('roomId', window.location.href);
 						let el = document.createElement("DIV");
 						el.className = "cursor";
 						el.id = "cursor_" + id;
-						el.style.top = y + 'px';
-						el.style.left = x + 'px';
+						el.style.top = (parseInt(y) - 22) + 'px';
+						el.style.left = (parseInt(x) - 20) + 'px';
 						el.style.position = 'absolute';
 						let smel = document.createElement("SMALL");
 						let textsmel = document.createTextNode(name);
@@ -56,8 +58,8 @@ let thisRoomId = getParameterByName('roomId', window.location.href);
 						el.appendChild(smel);
 						document.getElementsByTagName("body")[0].appendChild(el);
 				} else {
-					document.getElementById("cursor_"+id).style.top = y + 'px';
-					document.getElementById("cursor_"+id).style.left = x + 'px';
+					document.getElementById("cursor_"+id).style.top = (parseInt(y) - 22) + 'px';
+					document.getElementById("cursor_"+id).style.left = (parseInt(x) - 20) + 'px';
 				}
 			}
 		});
