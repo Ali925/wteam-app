@@ -5,7 +5,6 @@ const activeWin = require('active-win');
 const applescript = require('applescript');
 const fetch = require('electron-fetch').default;
 let url = require('url');
-const ElectronGoogleOAuth2 = require('@getstation/electron-google-oauth2').default;
 
 
 if (process.platform !== 'darwin') {
@@ -161,7 +160,7 @@ const appUrlIconsMap = {
 
 let mainWindow = null;
 app.on('ready', () => {
-  session.defaultSession.setUserAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36");
+  //session.defaultSession.setUserAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36");
 
   setTimeout(createWindow, 1000);
 });
