@@ -1,10 +1,12 @@
 const electron = require('electron');
-const { app, BrowserWindow, desktopCapturer} = electron;
+const { app, BrowserWindow, desktopCapturer, session} = electron;
 const path = require('path');
 const activeWin = require('active-win');
 const applescript = require('applescript');
 const fetch = require('electron-fetch').default;
 let url = require('url');
+const ElectronGoogleOAuth2 = require('@getstation/electron-google-oauth2').default;
+
 
 if (process.platform !== 'darwin') {
     const { autoUpdater } = require("electron-updater");
@@ -158,7 +160,11 @@ const appUrlIconsMap = {
 
 
 let mainWindow = null;
-app.on('ready', () => setTimeout(createWindow, 1000));
+app.on('ready', () => {
+  session.defaultSession.setUserAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36");
+
+  setTimeout(createWindow, 1000);
+});
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {
     app.quit()
@@ -187,18 +193,24 @@ function createWindow() {
 
   });
 
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
-    protocol: 'file:',
-    slashes: true
-  }));
-  mainWindow.on('closed', function () {
-    mainWindow = null
-  })
-  mainWindow.on('page-title-updated', function (e) {
-    e.preventDefault()
-  });
-}
+
+
+    mainWindow.loadURL(url.format({
+      pathname: path.join(__dirname, 'index.html'),
+      protocol: 'file:',
+      slashes: true
+    }));
+
+    mainWindow.on('closed', function () {
+      mainWindow = null
+    })
+    mainWindow.on('page-title-updated', function (e) {
+      e.preventDefault()
+    });
+
+    
+
+  }
 
 global.sharedPath = `file:///${__dirname}/`;
 global.filePath = `${__dirname}/`;
