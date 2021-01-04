@@ -1,4 +1,4 @@
-let self = this, users = {};
+let self = this, users = {}, userCount = 0;
 let displayName = getParameterByName('displayName', window.location.href);
 let thisRoomId = getParameterByName('roomId', window.location.href);
 		socket = io('https://api.wteam.chat', {
@@ -18,6 +18,7 @@ let thisRoomId = getParameterByName('roomId', window.location.href);
 		socket.on("all_users", (data) => {
 			let allUsers = JSON.parse(data);
 			console.log('all users: ', allUsers);
+			//alert('all users: ' + Object.keys(allUsers).length);
 			for(let i in users){
 				if(!allUsers[i]){
 					var elem = document.getElementById("cursor_"+i);
@@ -40,12 +41,34 @@ let thisRoomId = getParameterByName('roomId', window.location.href);
 			let y = ud.y;
 			y = Math.round((window.innerHeight * y) / 100);
 			let id = ud.id;
+
+			if(!users[id]){
+				//alert('roomId ' + roomId + ' thisRoomId ' + thisRoomId + ' id ' + id);
+			}
+
 			if(roomId && thisRoomId && id && roomId == thisRoomId){
 				if(!document.getElementById("cursor_"+id)){
 					console.log('new cursor detected: ', id, roomId, name);
+						
 						users[id] = {name: name, id: id};
 						let el = document.createElement("DIV");
-						el.className = "cursor";
+						let className = "cursor ";
+
+						let index = Object.keys(users).indexOf(id);
+
+						if(index%5 == 0){
+							className = "cursor first";
+						} else if(index%5 == 1){
+							className = "cursor second";
+						} else if(index%5 == 2){
+							className = "cursor third";
+						} else if(index%5 == 3){
+							className = "cursor forth";
+						} else if(index%5 == 4){
+							className = "cursor fifth";
+						}
+
+						el.className = className;
 						el.id = "cursor_" + id;
 						el.style.top = (parseInt(y) - 22) + 'px';
 						el.style.left = (parseInt(x) - 20) + 'px';

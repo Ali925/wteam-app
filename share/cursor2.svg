@@ -1,13 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="209" height="228" viewBox="0 0 209 228">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="186" height="186" viewBox="0 0 186 186">
   <defs>
-    <clipPath id="clip-cursor_3_1">
-      <rect width="209" height="228"/>
+    <clipPath id="clip-cursor2">
+      <rect width="186" height="186"/>
     </clipPath>
   </defs>
-  <g id="cursor_3_1" data-name="cursor 3 – 1" clip-path="url(#clip-cursor_3_1)">
-    <g id="Group_68" data-name="Group 68" transform="translate(-385 -167)">
-      <circle id="Ellipse_15" data-name="Ellipse 15" cx="73.5" cy="73.5" r="73.5" transform="translate(410 213)" fill="#50b7f9" opacity="0.08"/>
-      <path id="mouse-pointer" d="M35.674,38.854H23.151l6.592,16.054a2.193,2.193,0,0,1-1.115,2.832l-5.8,2.53a2.09,2.09,0,0,1-2.755-1.147L13.806,43.879,3.574,54.4A2.09,2.09,0,0,1,0,52.884V2.161A2.089,2.089,0,0,1,3.574.643L37.15,35.177A2.164,2.164,0,0,1,35.674,38.854Z" transform="matrix(0.998, -0.07, 0.07, 0.998, 472.239, 266.273)" fill="#50b7f9"/>
+  <g id="cursor2" clip-path="url(#clip-cursor2)">
+    <g id="Group_78" data-name="Group 78" transform="translate(-15 -16)">
+      <g id="Group_76" data-name="Group 76" transform="translate(6)">
+        <path id="Path_26" data-name="Path 26" d="M93,0A93,93,0,1,1,0,93,93,93,0,0,1,93,0Z" transform="translate(9 16)" fill="#ed623e" opacity="0.26"/>
+        <path id="Path_25" data-name="Path 25" d="M32,0A32,32,0,1,1,0,32,32,32,0,0,1,32,0Z" transform="translate(70 77)" fill="#ed623e" opacity="0.35"/>
+      </g>
+      <path id="mouse-pointer" d="M35.674,38.854H23.151l6.592,16.054a2.193,2.193,0,0,1-1.115,2.832l-5.8,2.53a2.09,2.09,0,0,1-2.755-1.147L13.806,43.879,3.574,54.4A2.09,2.09,0,0,1,0,52.884V2.161A2.089,2.089,0,0,1,3.574.643L37.15,35.177A2.164,2.164,0,0,1,35.674,38.854Z" transform="matrix(0.998, -0.07, 0.07, 0.998, 126.239, 129.273)" fill="#ed623e"/>
     </g>
   </g>
 </svg>
