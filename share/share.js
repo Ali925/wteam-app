@@ -1,7 +1,7 @@
 let self = this, users = {}, userCount = 0;
 let displayName = getParameterByName('displayName', window.location.href);
 let thisRoomId = getParameterByName('roomId', window.location.href);
-		socket = io('https://api.wteam.chat', {
+		socket = io('https://api.wteam.chat/cursor', {
 		    path: '/socket-service',
 		    transports: ['websocket']
 		});
