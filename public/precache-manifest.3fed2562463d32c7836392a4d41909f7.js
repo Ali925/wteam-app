@@ -4,11 +4,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/index.html"
   },
   {
-    "revision": "a8a44c29aa2c42a49712",
+    "revision": "a4351b22860fd72bf257",
     "url": "/main.css"
   },
   {
-    "revision": "a8a44c29aa2c42a49712",
+    "revision": "a4351b22860fd72bf257",
     "url": "/main.js"
   },
   {
@@ -124,10 +124,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/SanFrancisco.f568fc19.eot"
   },
   {
-    "revision": "cb2f5ef7a7a36064aba51ff997538348",
-    "url": "/static/media/app.cb2f5ef7.svg"
-  },
-  {
     "revision": "dfd74183c0ca0210392ab7a1c29aded5",
     "url": "/static/media/appicons.dfd74183.svg"
   },
@@ -144,16 +140,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/folder.9a4c8848.gif"
   },
   {
-    "revision": "1723cbc23b2edd93da47215bf1d7bf99",
-    "url": "/static/media/greendot.1723cbc2.svg"
-  },
-  {
     "revision": "43e97176a890a724e464ec41ec6c7547",
     "url": "/static/media/icons.43e97176.svg"
-  },
-  {
-    "revision": "e7ffad2f015b24d12f5741bc01e388d9",
-    "url": "/static/media/invite.e7ffad2f.svg"
   },
   {
     "revision": "08ca91bca72d4b90b3e8969473248267",
@@ -164,20 +152,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/meeting.f23bdcb1.svg"
   },
   {
-    "revision": "eccc39934f95b9724c238c42869cf185",
-    "url": "/static/media/message-circle.eccc3993.svg"
-  },
-  {
     "revision": "c3484f55e4d9a67af12477aaab7e0180",
     "url": "/static/media/person2.c3484f55.png"
-  },
-  {
-    "revision": "a422ec2ea8ffe37913e0fcfc89043115",
-    "url": "/static/media/phone.a422ec2e.svg"
-  },
-  {
-    "revision": "24c8728395f84946297299f7f74f484a",
-    "url": "/static/media/profile.24c87283.svg"
   },
   {
     "revision": "04b15fe83a45ef64e49675e0b4882e37",
@@ -188,16 +164,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/room.c8886e70.svg"
   },
   {
-    "revision": "6a13283d3f5b34649dc06fc96263f658",
-    "url": "/static/media/status.6a13283d.svg"
-  },
-  {
     "revision": "ef836b8e7126307e6aa61756fa85b7c2",
     "url": "/static/media/teammate card.ef836b8e.svg"
-  },
-  {
-    "revision": "b40271441885f9682fd805ada83df75e",
-    "url": "/static/media/video.b4027144.svg"
   },
   {
     "revision": "0ae19995028dd4982aab3ef07911e748",
