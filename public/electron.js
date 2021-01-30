@@ -5,6 +5,8 @@ const activeWin = require('active-win');
 const applescript = require('applescript');
 const fetch = require('electron-fetch').default;
 let url = require('url');
+const { prepareDialog, openDialog } = require('electron-custom-dialog')
+
 
 
 if (process.platform !== 'darwin') {
@@ -178,6 +180,14 @@ app.on('activate', function () {
 
 function createWindow() {
   //console.log("app path: ", app.getAppPath());
+
+  prepareDialog({
+  name: 'myDialog',
+    load(win) {
+      win.loadFile(path.join(__dirname, 'dialog.html'))
+    }
+  })
+  
   mainWindow = new BrowserWindow({
     width: 1024,
     height: 1024,
