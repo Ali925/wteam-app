@@ -1,7 +1,6 @@
 {
   "name": "wteam",
-  "version": "0.0.32",
-  "license": "UNLICENSED",
+  "version": "0.0.35",
   "author": "Tural Mehdi <alitural.mehdi@gmail.com>",
   "description": "wteam app",
   "main": "public/electron.js",
