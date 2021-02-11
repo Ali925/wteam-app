@@ -1,6 +1,6 @@
 {
   "name": "wteam",
-  "version": "0.0.35",
+  "version": "0.0.36",
   "author": "Tural Mehdi <alitural.mehdi@gmail.com>",
   "description": "wteam app",
   "main": "public/electron.js",
@@ -28,6 +28,7 @@
   },
   "build": {
     "appId": "com.wteam.chat",
+    "afterSign": "./afterSignHook.js",
     "mac": {
       "category": "public.app-category.business",
       "icon": "./icons.icns",
